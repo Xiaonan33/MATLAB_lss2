@@ -19,7 +19,7 @@ NewAg2{1} = NewAg{1};
 A_clv{1} = A_cl{1};
 % A_cl_general
 
-for N = 2:9
+for N = 2:8
     % Full computation
     tic
     for i1 = 1:p
@@ -82,3 +82,5 @@ for n = 2:9
     t_diff(n-1,3) = t(n,4)-t(n,2);      % time for reduce model (extended)
     t_diff(n-1,4) = t(n,3)-t(n,4);      % time for vertex
 end
+
+save('A_cl.mat')

@@ -1,0 +1,28 @@
+clear all
+load('A_cl.mat')
+xk0 = [1;1];
+
+[~,~,p4] = size(A_cl{4});
+for i = 1:p4
+    x4(:,p4)=A_cl{4}(:,:,i)*xk0;
+end
+
+p4_max(1) = max(x4(1,:));
+p4_max(2) = max(x4(2,:));
+p4_min = min(x4);
+
+[~,~,p4g] = size(A_clg{4});
+for i = 1:p4g
+    x4g(:,p4g)=A_clg{4}(:,:,i)*xk0;
+end
+
+p4g_max = max(x4g);
+p4g_min = min(x4g);
+
+[~,~,p4v] = size(A_clv{4});
+for i = 1:p4v
+    x4v(:,p4v)=A_clv{4}(:,:,i)*xk0;
+end
+
+p4v_max = max(x4v);
+p4v_min = min(x4v);

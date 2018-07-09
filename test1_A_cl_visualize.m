@@ -1,0 +1,64 @@
+% Use Set Inclusion Method to visualize the Matrix Representation of A_cl
+
+load('A_cl.mat')
+
+A = [];
+B = [];
+
+for i= 1:p
+    A = [A;A_cl{1}(:,:,i)];
+    B = [B;ones(2,1)];
+end
+
+% that is for the original set
+figure
+P1 = Polyhedron('A',A,'b',B);
+P1.plot
+
+
+% let's start with a A_cl^4 as example
+
+[~,~,p4] = size(A_cl{4});
+A4 = [];
+B4 = [];
+for i = 1:p4
+    A4 = [A4;A_cl{4}(:,:,i)];
+    B4 = [B4;ones(2,1)];
+end
+figure
+P4 = Polyhedron('A',A4,'b',B4);
+P4.plot
+
+[~,~,p4g] = size(A_clg{4});
+A4g = [];
+B4g = [];
+for i = 1:p4g
+    A4g = [A4g;A_clg{4}(:,:,i)];
+    B4g = [B4g;ones(2,1)];
+end
+figure
+P4g = Polyhedron('A',A4g,'b',B4g);
+P4g.plot
+
+[~,~,p4g2] = size(A_clg2{4});
+A4g2 = [];
+B4g2 = [];
+for i = 1:p4g2
+    A4g2 = [A4g2;A_clg2{4}(:,:,i)];
+    B4g2 = [B4g2;ones(2,1)];
+end
+figure
+P4g2 = Polyhedron('A',A4g2,'b',B4g2);
+P4g2.plot
+
+[~,~,p4v] = size(A_clv{4});
+A4v = [];
+B4v = [];
+for i = 1:p4v
+    A4v = [A4v;A_clv{4}(:,:,i)];
+    B4v = [B4v;ones(2,1)];
+end
+figure
+P4v = Polyhedron('A',A4v,'b',B4v);
+P4v.plot
+
